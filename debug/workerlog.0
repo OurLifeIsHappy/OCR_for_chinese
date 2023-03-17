@@ -1,0 +1,102 @@
+Traceback (most recent call last):
+  File "tools/train.py", line 205, in <module>
+    config, device, logger, vdl_writer = program.preprocess(is_train=True)
+  File "C:\Data\git\PaddleOCR-release-2.6\PaddleOCR-release-2.6\tools\program.py", line 657, in preprocess
+    .dev_id) if use_gpu else 'cpu'
+  File "C:\Users\seo-dn\Anaconda3\envs\paddle\lib\site-packages\paddle\fluid\dygraph\parallel.py", line 208, in device_id
+    return self._device_id
+AttributeError: 'ParallelEnv' object has no attribute '_device_id'
+[2023/03/10 14:58:36] ppocr INFO: Architecture : 
+[2023/03/10 14:58:36] ppocr INFO:     Backbone : 
+[2023/03/10 14:58:36] ppocr INFO:         model_name : large
+[2023/03/10 14:58:36] ppocr INFO:         name : MobileNetV3
+[2023/03/10 14:58:36] ppocr INFO:         scale : 0.5
+[2023/03/10 14:58:36] ppocr INFO:     Head : 
+[2023/03/10 14:58:36] ppocr INFO:         fc_decay : 0
+[2023/03/10 14:58:36] ppocr INFO:         name : CTCHead
+[2023/03/10 14:58:36] ppocr INFO:     Neck : 
+[2023/03/10 14:58:36] ppocr INFO:         encoder_type : rnn
+[2023/03/10 14:58:36] ppocr INFO:         hidden_size : 96
+[2023/03/10 14:58:36] ppocr INFO:         name : SequenceEncoder
+[2023/03/10 14:58:36] ppocr INFO:     Transform : None
+[2023/03/10 14:58:36] ppocr INFO:     algorithm : CRNN
+[2023/03/10 14:58:36] ppocr INFO:     model_type : rec
+[2023/03/10 14:58:36] ppocr INFO: Eval : 
+[2023/03/10 14:58:36] ppocr INFO:     dataset : 
+[2023/03/10 14:58:36] ppocr INFO:         data_dir : ./train_data/data_lmdb_release/training/
+[2023/03/10 14:58:36] ppocr INFO:         name : LMDBDataSet
+[2023/03/10 14:58:36] ppocr INFO:         transforms : 
+[2023/03/10 14:58:36] ppocr INFO:             DecodeImage : 
+[2023/03/10 14:58:36] ppocr INFO:                 channel_first : False
+[2023/03/10 14:58:36] ppocr INFO:                 img_mode : BGR
+[2023/03/10 14:58:36] ppocr INFO:             CTCLabelEncode : None
+[2023/03/10 14:58:36] ppocr INFO:             RecResizeImg : 
+[2023/03/10 14:58:36] ppocr INFO:                 image_shape : [3, 32, 100]
+[2023/03/10 14:58:36] ppocr INFO:             KeepKeys : 
+[2023/03/10 14:58:36] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2023/03/10 14:58:36] ppocr INFO:     loader : 
+[2023/03/10 14:58:36] ppocr INFO:         batch_size_per_card : 256
+[2023/03/10 14:58:36] ppocr INFO:         drop_last : False
+[2023/03/10 14:58:36] ppocr INFO:         num_workers : 4
+[2023/03/10 14:58:36] ppocr INFO:         shuffle : False
+[2023/03/10 14:58:36] ppocr INFO: Global : 
+[2023/03/10 14:58:36] ppocr INFO:     cal_metric_during_train : True
+[2023/03/10 14:58:36] ppocr INFO:     character_dict_path : None
+[2023/03/10 14:58:36] ppocr INFO:     checkpoints : None
+[2023/03/10 14:58:36] ppocr INFO:     distributed : False
+[2023/03/10 14:58:36] ppocr INFO:     epoch_num : 72
+[2023/03/10 14:58:36] ppocr INFO:     eval_batch_step : [0, 2000]
+[2023/03/10 14:58:36] ppocr INFO:     infer_img : doc/imgs_words_en/word_10.png
+[2023/03/10 14:58:36] ppocr INFO:     infer_mode : False
+[2023/03/10 14:58:36] ppocr INFO:     log_smooth_window : 20
+[2023/03/10 14:58:36] ppocr INFO:     max_text_length : 25
+[2023/03/10 14:58:36] ppocr INFO:     pretrained_model : None
+[2023/03/10 14:58:36] ppocr INFO:     print_batch_step : 10
+[2023/03/10 14:58:36] ppocr INFO:     save_epoch_step : 3
+[2023/03/10 14:58:36] ppocr INFO:     save_inference_dir : None
+[2023/03/10 14:58:36] ppocr INFO:     save_model_dir : ./output/rec/mv3_none_bilstm_ctc/
+[2023/03/10 14:58:36] ppocr INFO:     save_res_path : ./output/rec/predicts_mv3_none_bilstm_ctc.txt
+[2023/03/10 14:58:36] ppocr INFO:     use_gpu : False
+[2023/03/10 14:58:36] ppocr INFO:     use_space_char : False
+[2023/03/10 14:58:36] ppocr INFO:     use_visualdl : False
+[2023/03/10 14:58:36] ppocr INFO: Loss : 
+[2023/03/10 14:58:36] ppocr INFO:     name : CTCLoss
+[2023/03/10 14:58:36] ppocr INFO: Metric : 
+[2023/03/10 14:58:36] ppocr INFO:     main_indicator : acc
+[2023/03/10 14:58:36] ppocr INFO:     name : RecMetric
+[2023/03/10 14:58:36] ppocr INFO: Optimizer : 
+[2023/03/10 14:58:36] ppocr INFO:     beta1 : 0.9
+[2023/03/10 14:58:36] ppocr INFO:     beta2 : 0.999
+[2023/03/10 14:58:36] ppocr INFO:     lr : 
+[2023/03/10 14:58:36] ppocr INFO:         learning_rate : 0.0005
+[2023/03/10 14:58:36] ppocr INFO:     name : Adam
+[2023/03/10 14:58:36] ppocr INFO:     regularizer : 
+[2023/03/10 14:58:36] ppocr INFO:         factor : 0
+[2023/03/10 14:58:36] ppocr INFO:         name : L2
+[2023/03/10 14:58:36] ppocr INFO: PostProcess : 
+[2023/03/10 14:58:36] ppocr INFO:     name : CTCLabelDecode
+[2023/03/10 14:58:36] ppocr INFO: Train : 
+[2023/03/10 14:58:36] ppocr INFO:     dataset : 
+[2023/03/10 14:58:36] ppocr INFO:         data_dir : ./train_data/data_lmdb_release/training/
+[2023/03/10 14:58:36] ppocr INFO:         name : LMDBDataSet
+[2023/03/10 14:58:36] ppocr INFO:         transforms : 
+[2023/03/10 14:58:36] ppocr INFO:             DecodeImage : 
+[2023/03/10 14:58:36] ppocr INFO:                 channel_first : False
+[2023/03/10 14:58:36] ppocr INFO:                 img_mode : BGR
+[2023/03/10 14:58:36] ppocr INFO:             CTCLabelEncode : None
+[2023/03/10 14:58:36] ppocr INFO:             RecResizeImg : 
+[2023/03/10 14:58:36] ppocr INFO:                 image_shape : [3, 32, 100]
+[2023/03/10 14:58:36] ppocr INFO:             KeepKeys : 
+[2023/03/10 14:58:36] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2023/03/10 14:58:36] ppocr INFO:     loader : 
+[2023/03/10 14:58:36] ppocr INFO:         batch_size_per_card : 256
+[2023/03/10 14:58:36] ppocr INFO:         drop_last : True
+[2023/03/10 14:58:36] ppocr INFO:         num_workers : 8
+[2023/03/10 14:58:36] ppocr INFO:         shuffle : False
+[2023/03/10 14:58:36] ppocr INFO: profiler_options : None
+[2023/03/10 14:58:36] ppocr INFO: train with paddle 2.4.2 and device Place(cpu)
+[2023/03/10 14:58:36] ppocr INFO: Initialize indexs of datasets:./train_data/data_lmdb_release/training/
+[2023/03/10 14:58:36] ppocr WARNING: The character_dict_path is None, model can only recognize number and lower letters
+[2023/03/10 14:58:36] ppocr ERROR: No Images in train dataset, please ensure
+	1. The images num in the train label_file_list should be larger than or equal with batch size.
+	2. The annotation file and path in the configuration file are provided normally.
